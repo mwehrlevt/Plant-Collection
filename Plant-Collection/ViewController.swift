@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Plant-Collection
 //
-//  Created by Michelle on 10/16/21.
+//  Created by Michelle and Zach on 10/16/21.
 //  Copyright © 2021 mwehrle. All rights reserved.
 //
 
