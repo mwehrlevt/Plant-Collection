@@ -11,6 +11,34 @@ import UIKit
 class ItemsViewController: UITableViewController {
     var plantItemsStore: PlantItemsStore!
     
+    @IBAction func addNewItem(_ sender: UIButton) {
+        // create a new item and add it to the plant store
+        let newPlantItem = plantItemsStore.createItem()
+        
+        // figure out where that item is in the array
+        if let index = plantItemsStore.allPlantItems.firstIndex(of: newPlantItem) {
+            let indexPath = IndexPath(row: index, section: 0)
+            
+            // insert into new row in table
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    @IBAction func toggleEditingMode(_ sender: UIButton) {
+        // if in editing mode
+        if isEditing {
+            // change the text of button
+            sender.setTitle("Edit", for: .normal)
+            // turn odd editing mode
+            setEditing(false, animated: true)
+        } else {
+            // change the text of button
+            sender.setTitle("Done", for: .normal)
+            // enter editing mode
+            setEditing(true, animated: true)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return plantItemsStore.allPlantItems.count
     }

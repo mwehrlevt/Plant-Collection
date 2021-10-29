@@ -14,9 +14,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="F05-lg-kFy">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sr-SP-Cgv">
+                                    <rect key="frame" x="8" y="13" width="195" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Edit"/>
+                                    <connections>
+                                        <action selector="toggleEditingMode:" destination="fgG-H9-OTH" eventType="touchUpInside" id="XMW-yZ-PhW"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0S-ao-T9b">
+                                    <rect key="frame" x="211" y="13" width="195" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Add"/>
+                                    <connections>
+                                        <action selector="addNewItem:" destination="fgG-H9-OTH" eventType="touchUpInside" id="XaM-N8-JLg"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="W0S-ao-T9b" firstAttribute="width" secondItem="9Sr-SP-Cgv" secondAttribute="width" id="FVN-4d-cga"/>
+                                <constraint firstItem="9Sr-SP-Cgv" firstAttribute="leading" secondItem="F05-lg-kFy" secondAttribute="leading" constant="8" id="Ll1-CG-aDg"/>
+                                <constraint firstAttribute="trailing" secondItem="W0S-ao-T9b" secondAttribute="trailing" constant="8" id="U27-cY-ckN"/>
+                                <constraint firstItem="W0S-ao-T9b" firstAttribute="centerY" secondItem="F05-lg-kFy" secondAttribute="centerY" id="UxG-Dv-4wH"/>
+                                <constraint firstItem="9Sr-SP-Cgv" firstAttribute="centerY" secondItem="F05-lg-kFy" secondAttribute="centerY" id="cYl-6G-ugM"/>
+                                <constraint firstItem="W0S-ao-T9b" firstAttribute="leading" secondItem="9Sr-SP-Cgv" secondAttribute="trailing" constant="8" id="qLK-5I-dKl"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="2S1-y1-YMT" detailTextLabel="ZZk-JM-FbD" style="IBUITableViewCellStyleValue1" id="iOf-Pu-ZHl">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iOf-Pu-ZHl" id="Rhx-Dk-VMi">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -48,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rpn-Lv-eWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136" y="95"/>
+            <point key="canvasLocation" x="748" y="79"/>
         </scene>
     </scenes>
 </document>

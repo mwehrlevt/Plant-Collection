@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlantItem {
+class PlantItem: Equatable {
     var typeOfPlant: String
     var nickname: String
     var description: String
@@ -21,5 +21,9 @@ class PlantItem {
         self.description = description
         self.pot = pot
         self.waterRating = waterRating
+    }
+    
+    static func ==(lhs: PlantItem, rhs: PlantItem) -> Bool {
+        return lhs.typeOfPlant == rhs.typeOfPlant && lhs.description == rhs.description && lhs.nickname == rhs.nickname && lhs.pot == rhs.pot && lhs.waterRating == rhs.waterRating
     }
 }
