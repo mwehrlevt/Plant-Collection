@@ -46,29 +46,46 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="2S1-y1-YMT" detailTextLabel="ZZk-JM-FbD" style="IBUITableViewCellStyleValue1" id="iOf-Pu-ZHl">
-                                <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="65" id="iOf-Pu-ZHl" customClass="ItemCell" customModule="Plant_Collection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iOf-Pu-ZHl" id="Rhx-Dk-VMi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2S1-y1-YMT">
-                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Plant Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZZ-xW-aE0">
+                                            <rect key="frame" x="20" y="11" width="164.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZZk-JM-FbD">
-                                            <rect key="frame" x="350" y="12" width="44" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pot Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUt-Fe-u3w">
+                                            <rect key="frame" x="281" y="20.5" width="81" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Nickname Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqa-I2-yc1">
+                                            <rect key="frame" x="20" y="43" width="122.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="wqa-I2-yc1" secondAttribute="bottom" constant="1" id="7RW-50-Hj0"/>
+                                        <constraint firstAttribute="trailing" secondItem="nUt-Fe-u3w" secondAttribute="trailing" constant="52" id="7xd-63-Z6s"/>
+                                        <constraint firstItem="PZZ-xW-aE0" firstAttribute="top" secondItem="Rhx-Dk-VMi" secondAttribute="topMargin" id="O4b-4I-4k4"/>
+                                        <constraint firstItem="nUt-Fe-u3w" firstAttribute="centerY" secondItem="Rhx-Dk-VMi" secondAttribute="centerY" id="iO9-PT-3Hm"/>
+                                        <constraint firstItem="wqa-I2-yc1" firstAttribute="leading" secondItem="PZZ-xW-aE0" secondAttribute="leading" id="vKA-Ej-jQS"/>
+                                        <constraint firstItem="PZZ-xW-aE0" firstAttribute="leading" secondItem="Rhx-Dk-VMi" secondAttribute="leadingMargin" id="zR5-hN-D0e"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nicknameLabel" destination="wqa-I2-yc1" id="kYx-EV-b8h"/>
+                                    <outlet property="potLabel" destination="nUt-Fe-u3w" id="ouJ-6i-0My"/>
+                                    <outlet property="typeOfPlantLabel" destination="PZZ-xW-aE0" id="2HW-2C-UkJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -79,7 +96,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rpn-Lv-eWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="79"/>
+            <point key="canvasLocation" x="747.82608695652175" y="78.348214285714278"/>
         </scene>
     </scenes>
 </document>

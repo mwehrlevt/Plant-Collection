@@ -44,13 +44,15 @@ class ItemsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
         // Set the tect on the cell
         let plant = plantItemsStore.allPlantItems[indexPath.row]
         
-        cell.textLabel?.text = plant.typeOfPlant
-        cell.detailTextLabel?.text = plant.nickname
+        // configure the cell with the item
+        cell.typeOfPlantLabel.text = plant.typeOfPlant
+        cell.nicknameLabel.text = plant.nickname
+        cell.potLabel.text = plant.pot
         
         return cell
     }
@@ -71,5 +73,11 @@ class ItemsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         // update the model
         plantItemsStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.rowHeight = 65
     }
 }

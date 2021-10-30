@@ -17,6 +17,7 @@
 		324D1C3C271F461000517B99 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D1C3B271F461000517B99 /* ItemsViewController.swift */; };
 		324D1C3E271F483A00517B99 /* PlantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D1C3D271F483A00517B99 /* PlantItem.swift */; };
 		324D1C40271F4A8400517B99 /* PlantItemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D1C3F271F4A8400517B99 /* PlantItemsStore.swift */; };
+		325D4F57272DB4DA00146788 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D4F56272DB4DA00146788 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		324D1C3B271F461000517B99 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		324D1C3D271F483A00517B99 /* PlantItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantItem.swift; sourceTree = "<group>"; };
 		324D1C3F271F4A8400517B99 /* PlantItemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantItemsStore.swift; sourceTree = "<group>"; };
+		325D4F56272DB4DA00146788 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				324D1C3B271F461000517B99 /* ItemsViewController.swift */,
 				324D1C3D271F483A00517B99 /* PlantItem.swift */,
 				324D1C3F271F4A8400517B99 /* PlantItemsStore.swift */,
+				325D4F56272DB4DA00146788 /* ItemCell.swift */,
 			);
 			path = "Plant-Collection";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				324D1C40271F4A8400517B99 /* PlantItemsStore.swift in Sources */,
 				324D1C3E271F483A00517B99 /* PlantItem.swift in Sources */,
+				325D4F57272DB4DA00146788 /* ItemCell.swift in Sources */,
 				324D1C3C271F461000517B99 /* ItemsViewController.swift in Sources */,
 				324D1C08271B737300517B99 /* AppDelegate.swift in Sources */,
 				324D1C0A271B737300517B99 /* SceneDelegate.swift in Sources */,
