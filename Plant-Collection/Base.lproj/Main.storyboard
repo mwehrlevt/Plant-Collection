@@ -53,21 +53,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Plant Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZZ-xW-aE0">
-                                            <rect key="frame" x="20" y="11" width="164.5" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Plant Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZZ-xW-aE0">
+                                            <rect key="frame" x="20" y="11" width="146.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pot Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUt-Fe-u3w">
-                                            <rect key="frame" x="281" y="20.5" width="81" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pot Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUt-Fe-u3w">
+                                            <rect key="frame" x="290" y="22.5" width="72" height="20.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Nickname Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqa-I2-yc1">
-                                            <rect key="frame" x="20" y="43" width="122.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Nickname Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqa-I2-yc1">
+                                            <rect key="frame" x="20" y="39.5" width="90.5" height="24.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -77,6 +77,7 @@
                                         <constraint firstAttribute="trailing" secondItem="nUt-Fe-u3w" secondAttribute="trailing" constant="52" id="7xd-63-Z6s"/>
                                         <constraint firstItem="PZZ-xW-aE0" firstAttribute="top" secondItem="Rhx-Dk-VMi" secondAttribute="topMargin" id="O4b-4I-4k4"/>
                                         <constraint firstItem="nUt-Fe-u3w" firstAttribute="centerY" secondItem="Rhx-Dk-VMi" secondAttribute="centerY" id="iO9-PT-3Hm"/>
+                                        <constraint firstItem="wqa-I2-yc1" firstAttribute="top" secondItem="PZZ-xW-aE0" secondAttribute="bottom" constant="8" id="iyZ-gd-wbw"/>
                                         <constraint firstItem="wqa-I2-yc1" firstAttribute="leading" secondItem="PZZ-xW-aE0" secondAttribute="leading" id="vKA-Ej-jQS"/>
                                         <constraint firstItem="PZZ-xW-aE0" firstAttribute="leading" secondItem="Rhx-Dk-VMi" secondAttribute="leadingMargin" id="zR5-hN-D0e"/>
                                     </constraints>
