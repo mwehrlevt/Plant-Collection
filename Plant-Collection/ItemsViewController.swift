@@ -54,4 +54,22 @@ class ItemsViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // if the table view is asking to commit a delete
+        if editingStyle == .delete {
+            let item = plantItemsStore.allPlantItems[indexPath.row]
+            
+            // remove the plant
+            plantItemsStore.removeItem(item)
+            
+            // remove that row from the table view with an animation
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        // update the model
+        plantItemsStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
 }
