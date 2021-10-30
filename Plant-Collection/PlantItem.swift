@@ -13,9 +13,9 @@ class PlantItem: Equatable {
     var nickname: String
     var description: String
     var pot: String
-    var waterRating: Int
+    var waterRating: String
     
-    init(typeOfPlant: String, nickname: String, description: String, pot: String, waterRating: Int) {
+    init(typeOfPlant: String, nickname: String, description: String, pot: String, waterRating: String) {
         self.typeOfPlant = typeOfPlant
         self.nickname = nickname
         self.description = description

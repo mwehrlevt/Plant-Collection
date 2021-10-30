@@ -11,14 +11,15 @@ import UIKit
 class PlantItemsStore {
     var allPlantItems = [PlantItem]()
     
-    init() {
+    // for testing
+    /*init() {
         for _ in 0..<5 {
             createItem()
         }
-    }
+    }*/
     
     @discardableResult func createItem() -> PlantItem {
-        let newPlant = PlantItem(typeOfPlant: "Orchid", nickname: "Groot", description: "The Orchidaceae are a diverse...", pot: "purple pot", waterRating: 1)
+        let newPlant = PlantItem(typeOfPlant: "Orchid", nickname: "Groot", description: "The Orchidaceae are a diverse...", pot: "purple pot", waterRating: "1")
         
         allPlantItems.append(newPlant)
         return newPlant
