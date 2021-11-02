@@ -30,4 +30,15 @@ class DetailViewController: UIViewController {
         waterRatingField.text = plantItem.waterRating
         descriptionField.text = plantItem.description
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // "Save" changes to item
+        plantItem.typeOfPlant = typeOfPlantField.text ?? ""
+        plantItem.nickname = nicknameField.text ?? ""
+        plantItem.pot = potField.text ?? ""
+        plantItem.waterRating = waterRatingField.text ?? ""
+        plantItem.description = descriptionField.text ?? ""
+    }
 }
