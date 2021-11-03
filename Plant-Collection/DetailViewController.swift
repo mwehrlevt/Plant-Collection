@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var typeOfPlantField: UITextField!
     
     @IBOutlet var nicknameField: UITextField!
@@ -19,7 +19,11 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var descriptionField: UITextField!
     
-    var plantItem: PlantItem!
+    var plantItem: PlantItem! {
+        didSet {
+            navigationItem.title = plantItem.typeOfPlant
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,6 +38,9 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        // Clear first responder
+        view.endEditing(true)
+        
         // "Save" changes to item
         plantItem.typeOfPlant = typeOfPlantField.text ?? ""
         plantItem.nickname = nicknameField.text ?? ""
@@ -41,4 +48,14 @@ class DetailViewController: UIViewController {
         plantItem.waterRating = waterRatingField.text ?? ""
         plantItem.description = descriptionField.text ?? ""
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
 }
