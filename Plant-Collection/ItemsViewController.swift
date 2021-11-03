@@ -11,7 +11,13 @@ import UIKit
 class ItemsViewController: UITableViewController {
     var plantItemsStore: PlantItemsStore!
     
-    @IBAction func addNewItem(_ sender: UIButton) {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         // create a new item and add it to the plant store
         let newPlantItem = plantItemsStore.createItem()
         
@@ -21,21 +27,6 @@ class ItemsViewController: UITableViewController {
             
             // insert into new row in table
             tableView.insertRows(at: [indexPath], with: .automatic)
-        }
-    }
-    
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        // if in editing mode
-        if isEditing {
-            // change the text of button
-            sender.setTitle("Edit", for: .normal)
-            // turn odd editing mode
-            setEditing(false, animated: true)
-        } else {
-            // change the text of button
-            sender.setTitle("Done", for: .normal)
-            // enter editing mode
-            setEditing(true, animated: true)
         }
     }
     
