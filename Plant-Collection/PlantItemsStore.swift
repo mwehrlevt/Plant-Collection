@@ -45,4 +45,16 @@ class PlantItemsStore {
         // insert item in array at new location
         allPlantItems.insert(movedItem, at: toIndex)
     }
+    
+    func saveChanges() -> Bool {
+        do{
+            let encoder = PropertyListEncoder()
+            let data = try encoder.encode(allPlantItems)
+        } catch let encodingError{
+            print("Error encoding allPlantItems: \(encodingError)")
+        }
+        
+        
+        return false
+    }
 }

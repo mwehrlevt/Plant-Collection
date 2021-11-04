@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlantItem: Equatable {
+class PlantItem: Equatable, Codable {
     var typeOfPlant: String
     var nickname: String
     var description: String
