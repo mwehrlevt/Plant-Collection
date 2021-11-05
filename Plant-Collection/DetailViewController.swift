@@ -58,4 +58,21 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    @IBAction func trashItem(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Are you sure you want to delete this item", message: nil, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            print("Cancle Trashing Item")
+        }
+        
+        alertController.addAction(cancelAction)
+        
+        let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            print("Deleting item")
+            
+        }
+        alertController.addAction(confirmAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
 }
