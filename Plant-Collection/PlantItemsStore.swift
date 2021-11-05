@@ -10,6 +10,11 @@ import UIKit
 
 class PlantItemsStore {
     var allPlantItems = [PlantItem]()
+    let itemArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("items.plist")
+    }()
     
     // for testing
     /*init() {
@@ -17,6 +22,23 @@ class PlantItemsStore {
             createItem()
         }
     }*/
+    
+    init() {
+        do {
+            let data = try Data(contentsOf: itemArchiveURL)
+            let unarchiver = PropertyListDecoder()
+            let items = try unarchiver.decode([PlantItem].self, from: data)
+            allPlantItems = items
+        } catch {
+            print("Error reading in saved items: \(error)")
+        }
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self,
+                                       selector: #selector(saveChanges),
+                                       name: UIScene.didEnterBackgroundNotification,
+                                       object: nil)
+    }
     
     @discardableResult func createItem() -> PlantItem {
         let newPlant = PlantItem(typeOfPlant: "Orchid", nickname: "Groot", description: "The Orchidaceae are a diverse...", pot: "purple pot", waterRating: "1")
@@ -46,15 +68,16 @@ class PlantItemsStore {
         allPlantItems.insert(movedItem, at: toIndex)
     }
     
-    func saveChanges() -> Bool {
+    @objc func saveChanges() -> Bool {
         do{
             let encoder = PropertyListEncoder()
             let data = try encoder.encode(allPlantItems)
+            try data.write(to: itemArchiveURL, options: [.atomic])
+            print("Saved all of the items")
+            return true
         } catch let encodingError{
             print("Error encoding allPlantItems: \(encodingError)")
+            return false
         }
-        
-        
-        return false
     }
 }
