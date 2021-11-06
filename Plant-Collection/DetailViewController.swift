@@ -62,13 +62,16 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         let alertController = UIAlertController(title: "Are you sure you want to delete this item", message: nil, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            print("Cancle Trashing Item")
+            print("Cancel Trashing Item")
         }
         
         alertController.addAction(cancelAction)
         
         let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
             print("Deleting item")
+            PlantItemsStore().removeItem(self.plantItem)
+            
+            self.navigationController?.popViewController(animated: true)
             
         }
         alertController.addAction(confirmAction)

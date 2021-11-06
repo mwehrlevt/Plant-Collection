@@ -37,7 +37,7 @@ class ItemsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
-        // Set the tect on the cell
+        // Set the text on the cell
         let plant = plantItemsStore.allPlantItems[indexPath.row]
         
         // configure the cell with the item

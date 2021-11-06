@@ -16,13 +16,6 @@ class PlantItemsStore {
         return documentDirectory.appendingPathComponent("items.plist")
     }()
     
-    // for testing
-    /*init() {
-        for _ in 0..<5 {
-            createItem()
-        }
-    }*/
-    
     init() {
         do {
             let data = try Data(contentsOf: itemArchiveURL)
