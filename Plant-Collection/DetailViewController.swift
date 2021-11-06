@@ -19,6 +19,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var descriptionField: UITextField!
     
+    var plantItemsStore: PlantItemsStore!
+    
     var plantItem: PlantItem! {
         didSet {
             navigationItem.title = plantItem.typeOfPlant
@@ -69,8 +71,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         
         let confirmAction = UIAlertAction(title: "Yes", style: .default) { _ in
             print("Deleting item")
-            PlantItemsStore().removeItem(self.plantItem)
-            
+            self.plantItemsStore.removeItem(self.plantItem)
             self.navigationController?.popViewController(animated: true)
             
         }

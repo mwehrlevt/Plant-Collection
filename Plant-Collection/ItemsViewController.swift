@@ -83,6 +83,7 @@ class ItemsViewController: UITableViewController {
                 let plantItem = plantItemsStore.allPlantItems[row]
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.plantItem = plantItem
+                detailViewController.plantItemsStore = plantItemsStore
             }
         default:
             preconditionFailure("Unexpected segue identifier")
